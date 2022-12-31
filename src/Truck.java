@@ -27,6 +27,10 @@ public class Truck extends Car {
 		
 		System.out.println("How many seats would you like to have? (mininum 2 seats)");
 		int seats = input.nextInt();
+		while(seats < 2) {
+				System.out.println("ERROR: The seats must be mininum 2. Try again!");
+				seats = input.nextInt();
+		}
 		this.setSeats(seats);
 	}
 	

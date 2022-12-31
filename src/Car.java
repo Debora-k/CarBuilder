@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Car {
+public abstract class Car {
 	private String color;
 	private boolean sunRoof;
 	private boolean automaticTrans;
@@ -49,9 +49,6 @@ public class Car {
 		this.setAutomaticTrans(automaticTrans);
 	}
 	
-	public void specialBuild() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void specialBuild();
 	
 }

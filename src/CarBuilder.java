@@ -5,7 +5,6 @@ public class CarBuilder {
 	public static void main(String[] args) {
 		Car car;
 		
-		
 		System.out.println("What type of car would you like to build? (Truck / SUV)");
 		Scanner input = new Scanner(System.in);
 		String carType = input.nextLine();
