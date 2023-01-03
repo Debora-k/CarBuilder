@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class Car {
@@ -39,14 +40,31 @@ public abstract class Car {
 		this.setColor(color);
 		
 		//ask the user whether adding sun roof or not
-		System.out.println("Would you like to add sunroof for your car? (true / false)");
-		boolean sunRoof = input.nextBoolean();
-		this.setSunRoof(sunRoof);
+		while (true) {
+			try {
+				System.out.println("Would you like to add sunroof for your car? (true / false)");
+				boolean sunRoof = input.nextBoolean();
+				this.setSunRoof(sunRoof);
+				break;
+			} catch (InputMismatchException e) {
+				System.out.println("Please enter true or false only!");
+				input.next();
+			}
+		}
 		
 		//ask the user whether automatic transmission or not
-		System.out.println("Would you like to choose automatic transmission? (true / false)");
-		boolean automaticTrans = input.nextBoolean();
-		this.setAutomaticTrans(automaticTrans);
+		while (true) {
+			try {
+				System.out.println("Would you like to choose automatic transmission? (true / false)");
+				boolean automaticTrans = input.nextBoolean();
+				this.setAutomaticTrans(automaticTrans);
+				break;
+			}  catch (InputMismatchException e) {
+				System.out.println("Please enter true or false only!");
+				input.next();
+			}
+		}
+
 	}
 	
 	public abstract void specialBuild();
